@@ -1,0 +1,233 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@500;700&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --very-dark-GB-color: hsl(217, 19%, 35%);
+    --desaturated-d-blue-color: hsl(214, 17%, 51%);
+    --grayish-blue-color: hsl(212, 23%, 69%);
+    --light-GB-color: hsl(210, 46%, 95%);
+}
+
+body {
+    font-family: 'Manrope', sans-serif;
+    display: flex;
+    height: 100vh;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--light-GB-color);
+}
+
+main {
+    height: 400px;
+    max-width: 1100px;
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    border-radius: 10px;
+}
+
+.img-container {
+    height: 100%;
+    width: 100%;
+    
+}
+
+.img-container img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-bottom-left-radius: 15px;
+    border-top-left-radius: 15px;
+}
+
+.info-container {
+    background-color: white;
+    padding: 5% 10%;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+}
+
+h1 {
+    font-size: 30px;
+    color: var(--very-dark-GB-color);
+}
+
+p {
+    margin-top: 20px;
+    font-size: 19px;
+    color: var(--desaturated-d-blue-color);
+    font-weight: 500;
+    line-height: 1.5;
+}
+
+.user-section {
+    margin-top: 40px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.user-info img {
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.user-info {
+    display: flex;
+    height: fit-content;
+    align-items: center;
+}
+
+.about-user {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+}
+
+.fullname {
+    color: var(--very-dark-GB-color);
+    font-weight: 700;
+}
+
+.date {
+    color: var(--grayish-blue-color);
+}
+
+button {
+    height: 45px;
+    width: 45px;
+    border-radius: 50%;
+    border: none;
+    background-color: var(--light-GB-color);
+    cursor: pointer;
+    outline: none;
+}
+
+
+#path-img {
+    fill: hsl(214, 17%, 51%);
+}
+
+.clicked {
+    display: flex;
+}
+
+.unclicked {
+    display: none;
+}
+
+.share-section {
+    height: fit-content;
+    width: fit-content;
+    position: relative;
+}
+
+.tooltip {
+    position: absolute;
+    background-color: var(--very-dark-GB-color);
+    padding: 20px 28px;
+    text-transform: uppercase;
+    color: var(--grayish-blue-color);
+    font-weight: lighter;
+    left: 50%;
+    transform: translateX(-50%);
+    top: -90px;
+    border-radius: 14px;
+}
+
+.tooltip img {
+    margin-left: 20px;
+    object-fit: contain;
+    cursor: pointer;
+}
+
+.tooltip span {
+    margin-right: 10px;
+    letter-spacing: 6px;
+}
+
+.tooltip:before {
+    position: absolute;
+    content: '';
+    top: 98%;
+    transform: translateX(-50%);
+    left: 50%;
+    border: 15px solid;
+    border-color: hsl(217, 19%, 35%) #0000 #0000 #0000;
+}
+
+@media (max-width: 450px) {
+    main {
+        grid-template-columns: 100%;
+        height: fit-content;
+        overflow: hidden;
+    }
+
+    body {
+        display: flex;
+        height: 100vh;
+        padding: 10% 5%;
+    }
+
+    h1 {
+        font-size: 19px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .info-container {
+        padding: 30px;
+        position: relative;
+        border-top-right-radius: 0px;
+    }
+
+    .img-container img {
+        border-bottom-left-radius: 0px;
+    }
+
+    .tooltip {
+        position: absolute;
+        background-color: var(--very-dark-GB-color);
+        width: 100%;
+        text-transform: uppercase;
+        color: var(--grayish-blue-color);
+        font-weight: lighter;
+        border-bottom-left-radius: 12px;
+        border-bottom-right-radius: 12px;
+        border-top-right-radius: 0px;
+        border-top-left-radius: 0px;
+        top: 100%;
+        padding: 30px;
+        transform: translateY(-100%);
+        left: 0;
+    }
+
+    .tooltip::before {
+        display: none;
+    }
+
+    button {
+        position: relative;
+        z-index: 2;
+        top: 16px;
+    }
+
+    .share-section {
+        position: static;
+    }
+
+    .tooltip img {
+        height: 22px;
+        width: 22px;
+    }
+
+    .tooltip span {
+        margin-right: 0px;
+    }
+}
